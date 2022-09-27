@@ -1,21 +1,30 @@
 <div class="container">
-    <p style="color: green"><%= notice %></p>
+  <p style="color: green"><%= notice %></p>
 
-    <h1>Noticia felices.com </h1>
-    <p>En esta página vas poder las noticias felices del momento,también podras agregar noticias felices</p>
+  <h1 class="display-4" >Noticias felices.com </h1>
+  <p class="pa01" >Noticias Felices.com es una página que tiene como objetivo sacarte del mal hábito de consumir noticias negaticas o doomscrolling</p>
+  <p class="pa02" > Revisa las noticias positivas de Chile y el mundo.
+  También puedes ayudar a contribuir con noticias positivas. </p>
+
+  <%= render "noticia/cards" %>
+
+    <div class="ppp row justify-content-center">
+      <div class="col-2">
+        <a href="/noticia/new" class="btn btn-primary btn-lg" role="button">Nueva Noticia</a>
+      </div>
+    </div>
+
 
 
   <div id="noticia">
     <% @noticia.each do |noticium| %>
       <%= render noticium %>
       <p>
-        <%= link_to "Show this noticium", noticium %>
+        <%= link_to "Ver esta noticia", noticium %>
       </p>
     <% end %>
   </div>
 
-  <%= link_to "New noticium", new_noticium_path %>
-</div>
-<div class="container"> 
-    <button type="button" class="btn btn-lg btn-danger" data-bs-toggle="popover" title="Popover title" data-bs-content="And here's some amazing content. It's very engaging. Right?">Funciona el popover</button>
+  <%# No visble %>
+  <% link_to "Nueva Noticia", new_noticium_path %>
 </div>
